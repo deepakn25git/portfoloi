@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Animated Portfolio Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        .glow-text {
+            font-size: 2.5em;
+            text-shadow: 0 0 15px cyan;
+        }
+        h2 {
+            text-shadow: 0 0 10px cyan;
+        }
+        .about, .skills, .projects, .resume {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        button {
+            background: cyan;
+            color: black;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #00ffff;
+            box-shadow: 0 0 15px cyan;
+        }
+        /* SVG Background Animation */
+        #svg-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SVG Animated Background -->
+    <svg id="svg-bg" viewBox="0 0 800 600">
+        <!-- Moving Stars -->
+        <circle cx="50" cy="50" r="3" fill="white">
+            <animate attributeName="cy" from="0" to="600" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="200" cy="100" r="2" fill="white">
+            <animate attributeName="cy" from="0" to="600" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="400" cy="200" r="3" fill="white">
+            <animate attributeName="cy" from="0" to="600" dur="7s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Rotating Planet -->
+        <circle cx="600" cy="300" r="40" fill="blue">
+            <animateTransform attributeName="transform" type="rotate" from="0 600 300" to="360 600 300" dur="10s" repeatCount="indefinite"/>
+        </circle>
+    </svg>
+
+    <!-- Portfolio Content -->
+    <div class="container">
+        <header>
+            <h1 class="glow-text"> Deepak.N</h1>
+            <p class="subtitle">Game Developer | Java Programmer | Web Animator</p>
+        </header>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <p>I am a passionate game developer with expertise in *Java, Three.js, WebXR, and animation*. 
+               Creating futuristic games, simulations, and advanced web animations is my specialty.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li> Game Development (Java, Three.js)</li>
+                <li> Web Development (HTML, CSS, JS)</li>
+                <li> VR & 3D Animations (WebXR)</li>
+                <li> Advanced Java Animation</li>
+            </ul>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3> Sci-Fi Shooter Game</h3>
+                <p>A futuristic 3D Android shooting game with *on-screen controls, AI enemies, and power-ups*.</p>
+            </div>
+            <div class="project-card">
+                <h3> VR Galaxy Simulation</h3>
+                <p>Realistic *360° Milky Way simulation with wormholes and AI cosmic events* using *Three.js & WebXR*.</p>
+            </div>
+        </section>
+
+        <section class="resume">
+            <h2>Download Resume</h2>
+            <button onclick="downloadResume()"> Download PDF</button>
+        </section>
+    </div>
+<script>
+    function downloadResume() {
+        window.open("https://drive.google.com/uc?export=download&id=YOUR_GOOGLE_DRIVE_FILE_ID", "_blank");
+    }
+</script>
+
+
+</body>
+</html>
+10:41 am
